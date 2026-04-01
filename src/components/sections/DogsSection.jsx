@@ -55,7 +55,7 @@ export default function DogsSection() {
         {loading
           ? <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">{[1,2,3,4,5,6].map(i=><div key={i} className="h-80 rounded-3xl bg-gradient-to-br from-sky-pale to-rose-pale animate-pulse"/>)}</div>
           : <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-              {filtered.map((dog,i) => <div key={dog.id} className={`reveal reveal-delay-${(i%3)+1}`}><DogCard dog={dog}/></div>)}
+              
             </div>
         }
       </div>
