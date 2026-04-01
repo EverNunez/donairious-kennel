@@ -18,15 +18,20 @@ export default function DogsSection() {
   const [dogs,    setDogs]    = useState([])
   const [filter,  setFilter]  = useState('todos')
   const [loading, setLoading] = useState(true)
-  const [isDemo,  setIsDemo]  = useState(false)
+  
   useScrollReveal()
 
   useEffect(() => {
-    getDogs()
-      .then(data => { if (data?.length > 0) { setDogs(data) } else { setDogs(DEMO); setIsDemo(true) } })
-      .catch((err)  => { console.error(err) })
-      .finally(() => setLoading(false))
-  }, [])
+  getDogs()
+    .then(data => {
+      setDogs(data || [])
+    })
+    .catch((err) => {
+      console.error(err)
+      setDogs([])
+    })
+    .finally(() => setLoading(false))
+}, [])
 
   const filtered = filter === 'todos' ? dogs : dogs.filter(d => d.raza === filter)
 
