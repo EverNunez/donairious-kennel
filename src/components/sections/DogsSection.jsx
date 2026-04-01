@@ -42,7 +42,7 @@ export default function DogsSection() {
           <div className="section-tag">✦ Nuestros ejemplares</div>
           <h2 className="section-title">Conoce a nuestros<br/>pequeños corazones</h2>
           <p className="section-subtitle mx-auto">Cada uno es especial. Criados en casa con amor y dedicación</p>
-          {isDemo && <p className="mt-4 font-ui text-xs text-gray-400 bg-gold-pale border border-gold-light rounded-full inline-block px-4 py-1.5">✨ Ejemplos de demostración — Conecta Supabase para ver los reales</p>}
+         
         </div>
         <div className="flex items-center justify-center gap-3 mb-12 reveal reveal-delay-1">
           {FILTERS.map(f => (
