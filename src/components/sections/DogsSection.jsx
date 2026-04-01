@@ -24,7 +24,7 @@ export default function DogsSection() {
   useEffect(() => {
     getDogs()
       .then(data => { if (data?.length > 0) { setDogs(data) } else { setDogs(DEMO); setIsDemo(true) } })
-      .catch(()  => { setDogs(DEMO); setIsDemo(true) })
+      .catch((err)  => { console.error(err) })
       .finally(() => setLoading(false))
   }, [])
 
